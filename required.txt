@@ -1,0 +1,4 @@
+pamixer
+wofi
+grim
+slurp
