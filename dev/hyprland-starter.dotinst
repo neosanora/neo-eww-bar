@@ -1,0 +1,94 @@
+{
+	"name": "Neo Hyprland EWW",
+	"id": "com.Neo.EwwHyprlandV0.0",
+	"description": "DEV Starter package for your Hyprland experiments",
+	"version":"1.0",
+	"author": "neosanora",
+	"homepage": "https://github.com/neosanora/EWW-BAR-Dotfile",
+	"dependencies": "https://github.com/neosanora/EWW-BAR-Dotfile",
+	"source": "Projects/hyprland-EWW",
+	"subfolder": "dotfiles",
+	"setupscript":"setup.sh",
+	"dev":{
+		"ignore":"input.conf"
+	},
+	"restore":[
+		{
+			"title":"Neo Settings",
+			"source":".config/app",
+			"value":true
+		},
+		{
+			"title":"Keyboard settings",
+			"source":".config/hypr/conf/input.conf",
+			"value":true
+		},
+		{
+			"title":"Monitor settings",
+			"source":".config/hypr/conf/monitor.conf",
+			"value":true
+		}
+	],
+	"settings":[
+		{
+			"type":"text",
+			"mode":"replacesingleline",
+			"title":"Keyboard Layout",
+			"file":".config/hypr/conf/input.conf",
+			"checkpoint":"Check",
+			"search":"kb_layout",
+			"value":"us",
+			"template":"    kb_layout = [VALUE]"
+		},
+		{
+			"type":"text",
+			"mode":"replacesingleline",
+			"title":"Keyboard Variant",
+			"file":".config/hypr/conf/input.conf",
+			"checkpoint":"Check",
+			"search":"kb_variant",
+			"value":"",
+			"template":"    kb_variant = [VALUE]"
+		},
+		{
+			"type":"text",
+			"mode":"replacesingleline",
+			"title":"Screen Resolution",
+			"file":".config/hypr/conf/monitor.conf",
+			"checkpoint":"Check",
+			"search":"monitor=,preferred,",
+			"value":"preferred",
+			"template":"monitor=,[VALUE],auto,1"
+		},
+		{
+			"type":"text",
+			"mode":"overwritefile",
+			"title":"Default Terminal Emulator",
+			"file":".config/app/terminalemulator.sh",
+			"checkpoint":"Check",
+			"search":"",
+			"value":"kitty",
+			"template":""
+		},
+		{
+			"type":"text",
+			"mode":"overwritefile",
+			"title":"Default Browser",
+			"file":".config/app/browser.sh",
+			"checkpoint":"Check",
+			"search":"",
+			"value":"firefox",
+			"template":""
+		},
+		{
+			"type":"text",
+			"mode":"overwritefile",
+			"title":"Default filemanager",
+			"file":".config/app/filemanager.sh",
+			"checkpoint":"Check",
+			"search":"",
+			"value":"thunar",
+			"template":""
+		}
+	]
+}
