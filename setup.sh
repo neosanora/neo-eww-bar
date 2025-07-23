@@ -67,7 +67,7 @@ EOF
     }
 
 if [[ $(_checkCommandExists "pacman") == 0 ]]; then
-    $SCRIPT_DIR/setup-arch.sh
+    bash "$SCRIPT_DIR/setup-arch.sh"
 elif [[ $(_checkCommandExists "dnf") == 0 ]]; then
     $SCRIPT_DIR/setup-fedora.sh
 else
