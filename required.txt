@@ -1,4 +1,0 @@
-pamixer
-wofi
-grim
-slurp
