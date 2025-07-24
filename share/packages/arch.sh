@@ -4,14 +4,14 @@
 
 packages=(
   # === Tools Umum ===
-  "wget"
-  "unzip"
-  "git"
-  "jq"
-  "vim"
-  "neovim"
-  "gum"
-  "fastfetch"
+  "wget"            # download tool
+  "unzip"           # unzip files
+  "git"             # version control
+  "jq"              # JSON processor
+  "vim"             # text editor
+  "neovim"          # modern text editor
+  "gum"             # command line UI toolkit
+  "fastfetch"       # system information tool
 
   # === Font ===
   "ttf-font-awesome"
@@ -20,10 +20,10 @@ packages=(
   "ttf-firacode-nerd"
 
   # === Display Manager & WM ===
-  "hyprland"
-  "xdg-desktop-portal-hyprland"
-  "qt5-wayland"
-  "qt6-wayland"
+  "hyprland"                       # Wayland compositor
+  "xdg-desktop-portal-hyprland"    # xdg portal for Hyprland
+  "qt5-wayland"                    # Qt support for Wayland
+  "qt6-wayland"                    # Qt support for Wayland
 
   # === Aplikasi GUI & System ===
   "kitty"           # Default terminal emulator
@@ -36,21 +36,21 @@ packages=(
   "flatpak"         # package manager alternatif
 
   # === Audio / Media ===
-  "wireplumber"
-  "brightnessctl"
-  "networkmanager"
-  "pamixer"      # audio mixer
+  "wireplumber"     # media session manager
+  "brightnessctl"   # brightness control
+  "networkmanager"  # network management
+  "pamixer"         # audio mixer
 
   # === Bar, Menu, Lock ===
-  "eww"          # status bar
-  "wofi"         # app launcher
-  "hyprpaper"    # wallpaper
-  "hyprlock"     # lock screen
+  "eww"             # status bar
+  "wofi"            # app launcher
+  "hyprpaper"       # wallpaper
+  "hyprlock"        # lock screen
 
   # === Screenshot ===
-  "grim"         # screenshot tool
-  "slurp"        # region selector
+  "grim"            # screenshot tool
+  "slurp"           # region selector
 
   # === Monitoring ===
-  "nvtop"        # GPU usage
+  "nvtop"           # GPU usage
 )
