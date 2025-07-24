@@ -1,9 +1,99 @@
-# monasm-dots
+# NEO-dots 2.0
 
-My personal dotfiles for Arch Linux. This repository is not actively maintained. Some elements used in these scripts are not included here (for example, my wallpaper is stored somewhere on my PC — I forgot the exact location lol).
+> [!IMPORTANT]
+> These dotfiles are currently being revised and updated. This can lead to side effects during the installation or update..
 
-Use with caution! Make a backup of your current setup before trying this out. Alternatively, you can tweak your existing configs to your liking.
-Anddd, the code is extremly messy UwU sry.
+## Preview
+
+![Preview](preview.gif)
+
+The ML4W Hyprland Starter package is the perfect starting point for your Hyprland customization experiments. The Hyprland Starter configuration works on all Linux distributions that support the dynamic tiling window manager Hyprland.
+
+You can find configurations here: https://github.com/neosanora/EWW-BAR-Dotfile/tree/master/dotfiles
+
+## Installation
+
+You can install the ML4W Hyprland Starter easily with the Dotfiles Installer from an existing Window Manager or Desktop Environment.
+
+<a href="https://mylinuxforwork.github.io/dotfiles-installer/" target="_blank"><img src="https://mylinuxforwork.github.io/dotfiles-installer/dotfiles-installer-badge.png" style="border:0;margin-bottom:10px"></a>
+
+More information about the installation of the Dotfiles Installer here: https://github.com/mylinuxforwork/dotfiles-installer/wiki/01-Installation
+
+**1**. Copy the following url into the Dotfiles Installer.
+
+```
+https://raw.githubusercontent.com/neosanora/EWW-BAR-Dotfile/master/hyprland-starter.dotinst
+```
+
+
+**1**. if you wonted to install it with old fasion way (manualy) not recomended!.
+
+Just copy the following command into your terminal and execute.
+
+```
+bash <(curl -s https://raw.githubusercontent.com/neosanora/EWW-BAR-Dotfile/master/setup.sh)
+```
+
+
+
+<details>
+<summary>Please run the setup script offered by the Dotfiles Installer to install all dependencies. If your distribution is not supported,
+please install the following dependencies manually:</summary>
+
+-  # === Tools Umum ===
+-  "wget"            # download tool
+-  "unzip"           # unzip files
+-  "git"             # version control
+-  "jq"              # JSON processor
+-  "vim"             # text editor
+-  "neovim"          # modern text editor
+-  "gum"             # command line UI toolkit
+-  "fastfetch"       # system information tool
+
+-  # === Font ===
+-  "ttf-font-awesome"
+-  "ttf-fira-sans"
+-  "ttf-fira-code"
+-  "ttf-firacode-nerd"
+
+-  # === Display Manager & WM ===
+-  "hyprland"                       # Wayland compositor
+-  "xdg-desktop-portal-hyprland"    # xdg portal for Hyprland
+-  "qt5-wayland"                    # Qt support for Wayland
+-  "qt6-wayland"                    # Qt support for Wayland
+
+-  # === Aplikasi GUI & System ===
+-  "kitty"           # Default terminal emulator
+-  "alacritty"       # GPU-accelerated terminal emulator
+-  "thunar"          # file manager
+-  "firefox"         # browser
+-  "pavucontrol"     # audio control
+-  "dunst"           # notifikasi
+-  "wlogout"         # logout dialog
+-  "flatpak"         # package manager alternatif
+
+-  # === Audio / Media ===
+-  "wireplumber"     # media session manager
+-  "brightnessctl"   # brightness control
+-  "networkmanager"  # network management
+-  "pamixer"         # audio mixer
+
+-  # === Bar, Menu, Lock ===
+-  "eww"             # status bar
+-  "wofi"            # app launcher
+-  "hyprpaper"       # wallpaper
+-  "hyprlock"        # lock screen
+
+-  # === Screenshot ===
+-  "grim"            # screenshot tool
+-  "slurp"           # region selector
+
+-  # === Monitoring ===
+-  "nvtop"           # GPU usage
+
+</details>
+
+> Hyprland does not officially support NVIDIA hardware. But many users have reported a successful installation. Please read: https://wiki.hyprland.org/Nvidia/
 
 ## Overview
 
@@ -11,6 +101,181 @@ Anddd, the code is extremly messy UwU sry.
 - **Widgets and status bars:** [EWW](https://github.com/elkowar/eww)  
 - **Terminal emulator:** Kitty
 
-## Preview
+## Dependencies
 
-![Preview](preview.gif)
+The script will install the following packages and the corresponding configurations:
+
+- Window Manager: hyprland 
+- Status Bar: waybar 
+- Launcher: rofi-wayland 
+- Browser: Firefox
+- Terminal: kitty
+- Notification Service: dunst 
+- File Manager: Thunar
+- xdg-desktop-portal-hyprland 
+- qt5-wayland 
+- qt6-wayland 
+- Lock screen: hyprlock
+
+## Key Bindings
+
+The following custom key bindings are enabled (can be customized in ~/.config/hypr/hyprland.conf)
+
+- <kbd>SUPER</kbd> + <kbd>RETURN</kbd> to start terminal
+- <kbd>SUPER</kbd> + <kbd>Q</kbd> to quit an application
+- <kbd>SUPER</kbd> + <kbd>B</kbd> to start browser
+- <kbd>SUPER</kbd> + <kbd>M</kbd> to exit Hyprland
+- <kbd>SUPER</kbd> + <kbd>E</kbd> to start filemanager
+- <kbd>SUPER</kbd> + <kbd>SPACE</kbd> to start launcher rofi
+- <kbd>SUPER</kbd> + <kbd>T</kbd> to toggle floating
+- <kbd>SUPER</kbd> + <kbd>F</kbd> to toggle fullscreen
+- <kbd>SUPER</kbd> + <kbd>1-9</kbd> to switch workspaces
+- more key bindings in ~/.config/hypr/conf/binds.conf
+
+or after the installation with right mouse click on Apps in the status bar.
+
+## FAQ
+
+<details>
+<summary>Kitty terminal won't start in VirtualBox, what should I do?</summary>
+
+**A:** This is a known issue when running Kitty in VirtualBox or other virtual machines, especially if GPU acceleration is limited or missing. Here are some steps you can try:
+
+1. **Set environment variable before launching Kitty:**
+
+   ```bash
+   LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty
+   ```
+
+   This forces Kitty to use software rendering instead of GPU.
+
+2. **Install missing dependencies:**
+   
+   Make sure you have `mesa`, `libgl`, and `libx11` installed in your VM.
+
+3. **Try launching from another terminal:**
+   
+   If Kitty fails to start, open another terminal like `xterm`, `alacritty`, or `foot` and try launching Kitty from there to see error messages.
+
+4. **Check logs:**
+   
+   Run this command to see more detailed errors:
+
+   ```bash
+   kitty --debug-config
+   ```
+
+5. **Try running it under X11 instead of Wayland:**  
+   Some VM environments are more compatible with X11.
+
+---
+
+**Still not working?**
+
+If none of the above solutions work, we recommend using an alternative terminal emulator such as:
+
+- `alacritty`
+- `foot`
+- `gnome-terminal`
+- `xfce4-terminal`
+
+They are lighter and more compatible in virtual machines.
+</details>
+
+## 🛠️ VirtualBox Troubleshooting (FAQ)
+
+<details>
+<summary>💥 Kitty terminal crashes in VirtualBox with a Wayland error</summary>
+
+When launching `kitty` inside VirtualBox, you may encounter this error:
+
+```
+[glfw error 65544]: wayland: fatal display error: pipe wl_display#1: error 1: invalid arguments for wl_surface#31.attach
+```
+
+This happens because VirtualBox does not fully support GPU acceleration under Wayland, and `kitty` requires OpenGL.
+
+### ✅ Solution:
+Run `kitty` with software rendering:
+
+```bash
+LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty
+```
+
+To make it permanent, you can:
+
+- Add an alias in your `~/.bashrc` or `~/.zshrc`:
+
+  ```bash
+  alias kitty='LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty'
+  ```
+
+- Or create a Hyprland keybind:
+
+  ```ini
+  bind = $mainMod, Q, exec, env LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty
+  ```
+
+</details>
+
+---
+
+<details>
+<summary>❌ Flatpak app fails to start with “Lost connection to Wayland compositor”</summary>
+
+If you see this error:
+
+```
+Gdk-Message: Lost connection to Wayland compositor.
+```
+
+It usually means you are trying to run a Flatpak GUI app **outside of a Wayland session** (e.g., from a TTY or a broken desktop).
+
+### ✅ Solution:
+
+- Make sure you are inside a proper Wayland session:
+  ```bash
+  echo $WAYLAND_DISPLAY
+  ```
+
+  It should return something like `wayland-0` or `wayland-1`.
+
+- Run Flatpak apps from a GUI terminal (like `kitty`, `foot`, or `gnome-terminal`) inside Hyprland or another Wayland compositor.
+
+- If needed, manually specify the Wayland display:
+  ```bash
+  WAYLAND_DISPLAY=wayland-1 flatpak run com.ml4w.dotfilesinstaller
+  ```
+
+</details>
+
+---
+
+<details>
+<summary>📦 How to enable VirtualBox Guest Additions in Arch Linux?</summary>
+
+To enable features like dynamic resolution, clipboard sharing, and 3D acceleration:
+
+### Install required packages:
+```bash
+sudo pacman -S virtualbox-guest-utils virtualbox-guest-dkms
+```
+
+### Enable the service:
+```bash
+sudo systemctl enable vboxservice --now
+```
+
+### Load kernel modules:
+```bash
+sudo modprobe -a vboxguest vboxsf vboxvideo
+```
+
+### Optional: Add user to vboxsf group (for shared folders)
+```bash
+sudo usermod -aG vboxsf $(whoami)
+```
+
+Then **reboot your system**.
+
+</details>
