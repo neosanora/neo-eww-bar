@@ -4,9 +4,9 @@
 	"description": "My Hyprland experiments",
 	"version":"1.0",
 	"author": "Neosanora",
-	"homepage": "https://github.com/neosanora/EWW-BAR-Dotfile",
-	"dependencies": "https://github.com/neosanora/EWW-BAR-Dotfile",
-	"source": "https://github.com/neosanora/EWW-BAR-Dotfile.git",
+	"homepage": "https://github.com/neosanora/neo-eww-bar",
+	"dependencies": "https://github.com/neosanora/neo-eww-bar",
+	"source": "https://github.com/neosanora/neo-eww-bar.git",
 	"subfolder": "dotfiles",
 	"setupscript":"setup.sh",
 	"restore":[
