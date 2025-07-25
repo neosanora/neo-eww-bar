@@ -9,7 +9,7 @@
 
 The ML4W Hyprland Starter package is the perfect starting point for your Hyprland customization experiments. The Hyprland Starter configuration works on all Linux distributions that support the dynamic tiling window manager Hyprland.
 
-You can find configurations here: https://github.com/neosanora/EWW-BAR-Dotfile/tree/master/dotfiles
+You can find configurations here: https://github.com/neosanora/neo-eww-bar/tree/master/dotfiles
 
 ## Installation
 
@@ -22,7 +22,7 @@ More information about the installation of the Dotfiles Installer here: https://
 **1**. Copy the following url into the Dotfiles Installer.
 
 ```
-https://raw.githubusercontent.com/neosanora/EWW-BAR-Dotfile/master/hyprland-starter.dotinst
+https://raw.githubusercontent.com/neosanora/neo-eww-bar/master/hyprland-starter.dotinst
 ```
 
 
@@ -31,7 +31,7 @@ https://raw.githubusercontent.com/neosanora/EWW-BAR-Dotfile/master/hyprland-star
 Just copy the following command into your terminal and execute.
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/neosanora/EWW-BAR-Dotfile/master/setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/neosanora/neo-eww-bar/master/setup.sh)
 ```
 
 
