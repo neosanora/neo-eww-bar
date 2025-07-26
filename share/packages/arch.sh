@@ -37,7 +37,7 @@ packages=(
 
   # === Audio / Media ===
   "pipewire-jack"
-  "pipewire-elsa"
+  "pipewire-alsa"
   "pipewire-pulse"
   "qjackctl"
 
