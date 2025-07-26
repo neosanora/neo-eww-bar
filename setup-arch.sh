@@ -7,6 +7,15 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 source $SCRIPT_DIR/share/packages/arch.sh
 
+# (🔧 Tambahan) Source AUR package list
+AUR_PKG_FILE="$SCRIPT_DIR/share/packages/aur-package.sh"
+if [[ -f "$AUR_PKG_FILE" ]]; then
+    source "$AUR_PKG_FILE"
+else
+    echo ":: WARNING: File aur-package.sh tidak ditemukan. Lewati AUR tambahan."
+    aur_packages=()
+fi
+
 # ----------------------------------------------------------
 # Colors
 # ----------------------------------------------------------
@@ -34,13 +43,13 @@ _checkCommandExists() {
 
 _isInstalled() {
     package="$1"
-    check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")"
+    check="$(pacman -Qq "${package}" 2>/dev/null)"
     if [ -n "${check}" ]; then
         echo 0
-        return #true
+        return
     fi
     echo 1
-    return #false
+    return
 }
 
 # ----------------------------------------------------------
@@ -51,15 +60,15 @@ _installYay() {
     _installPackages "base-devel"
     SCRIPT=$(realpath "$0")
     temp_path=$(dirname "$SCRIPT")
-    git clone https://aur.archlinux.org/yay.git $download_folder/yay
-    cd $download_folder/yay
+    git clone https://aur.archlinux.org/yay.git "$download_folder/yay"
+    cd "$download_folder/yay"
     makepkg -si
-    cd $temp_path
+    cd "$temp_path"
     echo ":: yay has been installed successfully."
 }
 
 # ----------------------------------------------------------
-# Install packages
+# Install packages (via yay)
 # ----------------------------------------------------------
 
 _installPackages() {
@@ -71,12 +80,10 @@ _installPackages() {
         fi
         toInstall+=("${pkg}")
     done
-    if [[ "${toInstall[@]}" == "" ]]; then
+    if [[ "${#toInstall[@]}" -eq 0 ]]; then
         return
     fi
-    if [[ ! ${toInstall[@]} == "cargo" ]]; then
-        printf "Package not installed:\n%s\n" "${toInstall[@]}"
-    fi
+    printf "🔧 Menginstall package berikut:\n%s\n" "${toInstall[@]}"
     yay --noconfirm -S "${toInstall[@]}"
 }
 
@@ -93,7 +100,6 @@ cat <<"EOF"
 /___/\__/\__/\_,_/ .__/
                 /_/    
 ML4W Hyprland Starter for Arch based distros
-
 EOF
 echo -e "${NONE}"
 
@@ -112,7 +118,6 @@ while true; do
         [Nn]*)
             echo ":: Installation canceled"
             exit
-            break
             ;;
         *)
             echo ":: Please answer yes or no."
@@ -128,8 +133,16 @@ else
     _installYay
 fi
 
-# Packages
+# Install main packages (from arch.sh)
 _installPackages "${packages[@]}"
+
+# 🔧 Install additional AUR packages (from aur-package.sh)
+if [[ ${#aur_packages[@]} -gt 0 ]]; then
+    echo ":: Installing additional AUR packages from aur-package.sh..."
+    _installPackages "${aur_packages[@]}"
+else
+    echo ":: No additional AUR packages to install."
+fi
 
 # ----------------------------------------------------------
 # Completed
