@@ -36,6 +36,11 @@ packages=(
   "flatpak"         # package manager alternatif
 
   # === Audio / Media ===
+  "pipewire-jack"
+  "pipewire-elsa"
+  "pipewire-pulse"
+  "qjeckctl"
+
   "wireplumber"     # media session manager
   "brightnessctl"   # brightness control
   "networkmanager"  # network management
