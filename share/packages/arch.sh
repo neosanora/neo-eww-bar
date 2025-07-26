@@ -6,6 +6,8 @@
 
 packages=(
   # === Tools Umum ===
+  "thunar"          # File manager ringan (XFCE)
+  "firefox"         # Browser
   "wget"            # download tool
   "unzip"           # unzip files
   "git"             # version control
@@ -14,6 +16,9 @@ packages=(
   "neovim"          # modern text editor
   "gum"             # command line UI toolkit
   "fastfetch"       # system information tool
+
+  # === app manager ===
+  "flatpak"         # Alternatif package manager (sandboxed)
 
   # === Font ===
   "ttf-font-awesome"
@@ -30,15 +35,12 @@ packages=(
   # === Aplikasi GUI & System ===
   "kitty"           # Terminal modern dan cepat
   "alacritty"       # Terminal GPU-accelerated
-  "thunar"          # File manager ringan (XFCE)
-  "firefox"         # Browser
   "pavucontrol"     # GUI audio control
   "qjackctl"        # GUI control untuk JACK server
   "dunst"           # Sistem notifikasi ringan
   "wlogout"         # GUI logout menu
   "brightnessctl"   # Kontrol kecerahan
   "networkmanager"  # Manajemen jaringan (WiFi/Ethernet)
-  "flatpak"         # Alternatif package manager (sandboxed)
 
   # === Audio / Media ===
   "pipewire-jack"   # JACK support via PipeWire
