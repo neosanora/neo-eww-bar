@@ -39,7 +39,7 @@ packages=(
   "pipewire-jack"
   "pipewire-elsa"
   "pipewire-pulse"
-  "qjeckctl"
+  "qjackctl"
 
   "wireplumber"     # media session manager
   "brightnessctl"   # brightness control
