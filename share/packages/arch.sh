@@ -33,6 +33,7 @@ packages=(
   "thunar"          # File manager ringan (XFCE)
   "firefox"         # Browser
   "pavucontrol"     # GUI audio control
+  "qjackctl"        # GUI control untuk JACK server
   "dunst"           # Sistem notifikasi ringan
   "wlogout"         # GUI logout menu
   "flatpak"         # Alternatif package manager (sandboxed)
@@ -41,7 +42,6 @@ packages=(
   "pipewire-jack"   # JACK support via PipeWire
   "pipewire-alsa"   # ALSA support via PipeWire
   "pipewire-pulse"  # PulseAudio replacement via PipeWire
-  "qjackctl"        # GUI control untuk JACK server
   "wireplumber"     # Session manager PipeWire
   "brightnessctl"   # Kontrol kecerahan
   "networkmanager"  # Manajemen jaringan (WiFi/Ethernet)
