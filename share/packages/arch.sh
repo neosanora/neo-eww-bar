@@ -36,6 +36,8 @@ packages=(
   "qjackctl"        # GUI control untuk JACK server
   "dunst"           # Sistem notifikasi ringan
   "wlogout"         # GUI logout menu
+  "brightnessctl"   # Kontrol kecerahan
+  "networkmanager"  # Manajemen jaringan (WiFi/Ethernet)
   "flatpak"         # Alternatif package manager (sandboxed)
 
   # === Audio / Media ===
@@ -43,8 +45,6 @@ packages=(
   "pipewire-alsa"   # ALSA support via PipeWire
   "pipewire-pulse"  # PulseAudio replacement via PipeWire
   "wireplumber"     # Session manager PipeWire
-  "brightnessctl"   # Kontrol kecerahan
-  "networkmanager"  # Manajemen jaringan (WiFi/Ethernet)
   "pamixer"         # CLI audio mixer
 
   # === Bar, Menu, Lock ===
