@@ -45,7 +45,10 @@ packages=(
   "qjackctl"        # GUI control untuk JACK server
   "dunst"           # Sistem notifikasi ringan
   "brightnessctl"   # Kontrol kecerahan
+
+  # === Network ===
   "networkmanager"  # Manajemen jaringan (WiFi/Ethernet)
+  "curl"            # command line tool and library for transferring data with URLs
 
   # === Audio / Media ===
   "pipewire-jack"   # JACK support via PipeWire
