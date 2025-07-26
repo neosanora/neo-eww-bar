@@ -1,6 +1,8 @@
-# ----------------------------------------------------------
-# Packages
-# ----------------------------------------------------------
+#!/bin/bash
+
+# ============================================
+# 🎯 Daftar Package
+# ============================================
 
 packages=(
   # === Tools Umum ===
@@ -21,41 +23,40 @@ packages=(
 
   # === Display Manager & WM ===
   "hyprland"                       # Wayland compositor
-  "xdg-desktop-portal-hyprland"    # xdg portal for Hyprland
-  "qt5-wayland"                    # Qt support for Wayland
-  "qt6-wayland"                    # Qt support for Wayland
+  "xdg-desktop-portal-hyprland"   # xdg portal untuk Hyprland
+  "qt5-wayland"                   # Qt support for Wayland
+  "qt6-wayland"                   # Qt support for Wayland
 
   # === Aplikasi GUI & System ===
-  "kitty"           # Default terminal emulator
-  "alacritty"       # GPU-accelerated terminal emulator
-  "thunar"          # file manager
-  "firefox"         # browser
-  "pavucontrol"     # audio control
-  "dunst"           # notifikasi
-  "wlogout"         # logout dialog
-  "flatpak"         # package manager alternatif
+  "kitty"           # Terminal modern dan cepat
+  "alacritty"       # Terminal GPU-accelerated
+  "thunar"          # File manager ringan (XFCE)
+  "firefox"         # Browser
+  "pavucontrol"     # GUI audio control
+  "dunst"           # Sistem notifikasi ringan
+  "wlogout"         # GUI logout menu
+  "flatpak"         # Alternatif package manager (sandboxed)
 
   # === Audio / Media ===
-  "pipewire-jack"
-  "pipewire-alsa"
-  "pipewire-pulse"
-  "qjackctl"
-
-  "wireplumber"     # media session manager
-  "brightnessctl"   # brightness control
-  "networkmanager"  # network management
-  "pamixer"         # audio mixer
+  "pipewire-jack"   # JACK support via PipeWire
+  "pipewire-alsa"   # ALSA support via PipeWire
+  "pipewire-pulse"  # PulseAudio replacement via PipeWire
+  "qjackctl"        # GUI control untuk JACK server
+  "wireplumber"     # Session manager PipeWire
+  "brightnessctl"   # Kontrol kecerahan
+  "networkmanager"  # Manajemen jaringan (WiFi/Ethernet)
+  "pamixer"         # CLI audio mixer
 
   # === Bar, Menu, Lock ===
-  "eww"             # status bar
-  "wofi"            # app launcher
-  "hyprpaper"       # wallpaper
-  "hyprlock"        # lock screen
+  "eww"             # Widget bar / status bar
+  "wofi"            # Wayland app launcher
+  "hyprpaper"       # Wallpaper manager
+  "hyprlock"        # Lock screen Hyprland
 
   # === Screenshot ===
-  "grim"            # screenshot tool
-  "slurp"           # region selector
+  "grim"            # Alat screenshot untuk Wayland
+  "slurp"           # Area selector (buat grim)
 
   # === Monitoring ===
-  "nvtop"           # GPU usage
+  "nvtop"           # Monitor GPU usage (mirip htop)
 )
