@@ -27,7 +27,7 @@ packages=(
   "ttf-firacode-nerd"
 
   # === Display Manager & WM ===
-  "hyprland"                       # Wayland compositor
+  "hyprland"                      # Wayland compositor
   "xdg-desktop-portal-hyprland"   # xdg portal untuk Hyprland
   "qt5-wayland"                   # Qt support for Wayland
   "qt6-wayland"                   # Qt support for Wayland
