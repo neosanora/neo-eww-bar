@@ -7,7 +7,6 @@
 packages=(
   # === Tools Umum ===
   "firefox"         # Browser
-  "wget"            # download tool
   "unzip"           # unzip files
   "git"             # version control
   "jq"              # JSON processor
@@ -49,6 +48,7 @@ packages=(
   # === Network ===
   "networkmanager"  # Manajemen jaringan (WiFi/Ethernet)
   "curl"            # command line tool and library for transferring data with URLs
+  "wget"            # Network utility to retrieve files from the web
 
   # === Audio / Media ===
   "pipewire-jack"   # JACK support via PipeWire
