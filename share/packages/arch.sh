@@ -6,18 +6,24 @@
 
 packages=(
   # === Tools Umum ===
-  "thunar"          # File manager ringan (XFCE)
   "firefox"         # Browser
   "wget"            # download tool
   "unzip"           # unzip files
   "git"             # version control
   "jq"              # JSON processor
-  "vim"             # text editor
-  "neovim"          # modern text editor
   "gum"             # command line UI toolkit
   "fastfetch"       # system information tool
 
-  # === app manager ===
+  # === File Editor ===
+  "vim"             # text editor
+  "neovim"          # modern text editor
+
+  # === File Manager ===
+  "ranger"          # File Manager Like NVIM
+  "thunar"          # File manager ringan (XFCE)
+
+
+  # === App Manager ===
   "flatpak"         # Alternatif package manager (sandboxed)
 
   # === Font ===
@@ -38,7 +44,6 @@ packages=(
   "pavucontrol"     # GUI audio control
   "qjackctl"        # GUI control untuk JACK server
   "dunst"           # Sistem notifikasi ringan
-  "wlogout"         # GUI logout menu
   "brightnessctl"   # Kontrol kecerahan
   "networkmanager"  # Manajemen jaringan (WiFi/Ethernet)
 
@@ -53,6 +58,7 @@ packages=(
   "eww"             # Widget bar / status bar
   "wofi"            # Wayland app launcher
   "hyprpaper"       # Wallpaper manager
+  "wlogout"         # GUI logout menu
   "hyprlock"        # Lock screen Hyprland
 
   # === Screenshot ===
