@@ -50,7 +50,7 @@ _isInstalled() {
 }
 
 _installYay() {
-    _installPackages "base-devel"
+    _installPackages "base-devel" "git"
     SCRIPT=$(realpath "$0")
     temp_path=$(dirname "$SCRIPT")
     git clone https://aur.archlinux.org/yay.git "$download_folder/yay"
